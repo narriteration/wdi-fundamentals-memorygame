@@ -1,3 +1,74 @@
 /* This is a multi-line
 comment. Add your CSS code
 from Unit 1 - 5 below  */
+
+body {
+	text-align: center;
+}
+
+/* UNDID: on exercize 4.11 the deliverable shows the yellow four boxes aligned left 
+(after adding text-align to body selector), 
+but I had "inline-block set for .board, so I just now commented it out so it it displays block as default.*/
+
+h1 {
+	color: rgba(2, 132, 130, 1);
+}
+
+h2 {
+	color: #FFD700;
+}
+
+nav {
+	background-color: #808080;
+}
+
+nav a {
+	background-color: #FFBF00;
+	color: white;
+	padding: 35px;
+	display: block;
+	float: left;
+}
+
+nav a:hover {
+	background-color: #ee5f3c;
+}
+
+footer {
+	background-color: #808080;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear: both;
+	height: 0;
+	font-size: 0;
+}
+
+.board {
+	height: 50%;
+	width: 50%;
+	display: inline-block;
+	text-align: left;
+}
+
+
+.card {
+	height: 200px;
+	width: 150px;
+	border: 1px solid #000000;
+	background-color: #FFFF00;
+	border-radius: 10px;
+	float: left;
+	margin: 8%;
+}
+
+.created {
+	text-align: center;
+}
+
+.name {
+	color: #FF0000;
+}
