@@ -6,8 +6,8 @@ body {
 	text-align: center;
 }
 
-/* UNDID: on exercize 4.11 the deliverable shows the yellow four boxes aligned left 
-(after adding text-align to body selector), 
+/* UNDID: on exercize 4.11 the deliverable shows the yellow four boxes aligned left
+(after adding text-align to body selector),
 but I had "inline-block set for .board, so I just now commented it out so it it displays block as default.*/
 
 h1 {
@@ -71,4 +71,9 @@ footer {
 
 .name {
 	color: #FF0000;
+}
+
+img {
+	height: 200px;
+	width: 150px;
 }

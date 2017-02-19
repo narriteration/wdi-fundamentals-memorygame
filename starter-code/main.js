@@ -1,33 +1,49 @@
 console.log("JS file is connected to HTML! Woo! Says Chelsea")
 
-var cardOne = "queen";
-var cardTwo = "queen";
-var cardThree = "king";
-var cardFour = "king";
+var cards = ["queen", "queen", "king", "king"]
+
+var cardsInPlay = []
 
 
-// 4. Create a function called createCards in your JavaScript file. 
-// This function will contain the code you just wrote to generate your cards
-var createCards = function() {
+var board = document.getElementById('game-board');
 
-	// 1. get element with id of game-board and set it to a variable
-	var gameBoard = document.getElementById('game-board');
+function createBoard() {
+	for (var i = 0; i < cards.length; i++) {
+	// what is data-card ??
+		var cardElement = document.createElement('div');
+		cardElement.className = 'card';
+		cardElement.setAttribute('data-card', cards[i]);
+		cardElement.addEventListener('click', isTwoCards);
 
-	// 2. create a for loop that creates an HTML element for each card
-	for (var i = 0; i < 4; i++) {
-
-		// 2.5 Each HTML element should be a div 
-		var div = document.createElement('div');
-		// and have the class card
-		div.className = 'card';
-		// 3. Append each newly created card to the div with the ID game-board.
-		gameBoard.appendChild(div);
+		board.appendChild(cardElement);
+		board.appendChild(cardElement);
 	}
 }
 
-// 5. call the function (make it happen!)
-createCards();
+function isTwoCards() {
+	cardsInPlay.push(this.getAttribute('data-card'));
+		console.log(this.getAttribute('data-card'))
+		if (this.getAttribute('data-card') === "king") {
+			this.innerHTML = "<img src = 'http://whatdykelookslike.com/wp-content/uploads/2015/09/kboyce_Trevor_drag_king-.jpg'>"; // KING LINK
+		} else {
+			this.innerHTML = "<img src ='http://www.vogue.com/wp-content/uploads/2015/03/02/holding-rupaul-interview.jpg'>"; // QUEEN LINK
+		}
+	if (cardsInPlay.length === 2) {
+// pass in the cardsInPlay argument to the isMatch function
+		isMatch(cardsInPlay);
+		cardsInPlay = [];
+	}
+}
 
+function isMatch(cards) {
+	if (cards[0] === cards[1]) {
+		alert ("You found a match!")
+	} else {
+		alert ("Sorry, try again.")
+	}
+}
+
+createBoard();
 
 /*
 if (cardOne === cardTwo || cardThree === cardFour) {
@@ -43,4 +59,3 @@ if (cardOne === cardTwo || cardThree === cardFour) {
 /*
 
 */
-
